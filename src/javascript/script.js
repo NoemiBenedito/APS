@@ -9,21 +9,21 @@ $(document).ready(function() {
 
     $(window).on('scroll', function () {
         const header = $('header');
-        const scrollPosition = $(window).scrollTop();
+        const scrollPosition = $(window).scrollTop() - header.outerHeight();
         let activeSectionIndex = 0;
 
         // Sombra no header
         if (scrollPosition <= 0) {
             header.css('box-shadow', 'none');
         } else {
-            header.css('box-shadow', '5px 1px 5px rgba(32, 28, 28, 0.60)');
+            header.css('box-shadow', '5px 1px 5px rgba(8, 7, 7, 0.6)');
         }
 
-        // Detectar qual seção está visível
+        // Detectar qual seção está visível i=index
         sections.each(function(i) {
             const section = $(this);
             const sectionTop = section.offset().top - 96;
-            const sectionBottom = sectionTop + section.outerHeight();
+            const sectionBottom = sectionTop+ section.outerHeight();
 
             if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
                 activeSectionIndex = i;
@@ -31,7 +31,7 @@ $(document).ready(function() {
             }
         });
 
-        // Atualizar classe 'active' nos itens de navegação
+        // Atualizar classe 'active' nos itens de navegação,ou seja , o tracinho ue fica embaixo
         navItems.removeClass('active');
         $(navItems[activeSectionIndex]).addClass('active');
     });
@@ -43,7 +43,7 @@ $(document).ready(function() {
 
     });
 
-    ScrollReveal().reveal('#bio', { 
+    ScrollReveal().reveal('#sobre', { 
         origin:'left',
         duration:2000,
         distance:'20%'
