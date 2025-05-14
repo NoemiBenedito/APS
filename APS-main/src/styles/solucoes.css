@@ -1,0 +1,63 @@
+#solucoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    padding: 40px;
+    
+}
+
+#slcs {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+    justify-content: center;
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.slc {
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    border-radius: 20px;
+    gap: 18px;
+    width: 320px; /* aqui está a largura ideal */
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
+    position:initial;
+    text-align: center;
+}
+
+.slc-description {
+    font-size: 16px;
+    color: #1d1d1d;
+    text-align: center;
+}
+
+
+
+@media screen and (max-width: 1170px) { 
+    #slcs{
+        flex-wrap:wrap ;
+        justify-content: center;
+    }
+
+    .slc{
+            width:calc(50% - 12px) ;
+    }
+
+ }
+
+ @media screen and (max-width: 600px) { 
+    .slc{
+        width:100% 
+}
+
+#slc .section-subtitle{
+    text-align: center;
+}
+
+ }
